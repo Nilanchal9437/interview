@@ -73,7 +73,7 @@ function ChartComponent() {
 
   return (
     <div>
-      <h2>Chart</h2>
+      <h2 style={{ textAlign: "center", margin: 2 }}>Chart</h2>
       <div style={{ width: "80vw", margin: "auto", paddingTop: 20 }}>
         <Line data={chartData} options={options} />
       </div>
