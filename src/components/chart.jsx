@@ -36,14 +36,8 @@ function ChartComponent() {
   }, []);
 
   const chartData = {
-    labels: xAxis.map((item) => item.Label),
+    labels: xAxis.map((item) => item.RandomNumber),
     datasets: [
-      {
-        label: "X-axis Data",
-        data: xAxis.map((item) => item.RandomNumber),
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgb(255, 255, 255)",
-      },
       {
         label: "Y-axis Data",
         data: yAxis.map((item) => item.RandomNumber),
