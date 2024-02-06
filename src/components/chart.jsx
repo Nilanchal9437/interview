@@ -36,23 +36,46 @@ function ChartComponent() {
   }, []);
 
   const chartData = {
-    labels: xAxis.map((item) => item.RandomNumber),
+    labels: xAxis.map((item) => item.Label),
     datasets: [
+      {
+        label: "X-axis Data",
+        data: xAxis.map((item) => item.RandomNumber),
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgb(255, 255, 255)",
+      },
       {
         label: "Y-axis Data",
         data: yAxis.map((item) => item.RandomNumber),
         fill: false,
         borderColor: "rgba(75,192,192,1)",
-        tension: 0.1,
+        backgroundColor: "rgb(255, 255, 255)",
       },
     ],
+  };
+
+  const options = {
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: "X Axis Label",
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: "Y Axis Label",
+        },
+      },
+    },
   };
 
   return (
     <div>
       <h2>Chart</h2>
-      <div style={{ width: "50vw", margin:"auto", paddingTop: 20 }}>
-        <Line data={chartData} />
+      <div style={{ width: "80vw", margin: "auto", paddingTop: 20 }}>
+        <Line data={chartData} options={options} />
       </div>
     </div>
   );
